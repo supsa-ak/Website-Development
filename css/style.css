@@ -2,6 +2,9 @@
 
 :root {
     --primary-color:#047aed;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
 }
 
 * {
@@ -82,9 +85,13 @@ img{
 
 .showcase .grid{
      overflow: visible; /*removes the scrollbar */
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 55% auto;
     gap:30px;
 }
+
+.showcase-text {
+    animation: slideInFromLeft 1s ease-in;
+  }
 
 .showcase-form {
     position:relative;
@@ -132,4 +139,35 @@ img{
 /* Stats */
 .stats{
     padding-top:100px;
+}
+
+.stats-heading{
+    max-width: 500px;
+    margin: auto;
+}
+
+.stats .grid h3{
+    font-size: 35px;
+}
+
+.stats .grid p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* cli */
+.cli .grid {
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2, 1fr)
+}
+
+.cli .grid > *:first-child{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+/* Cloud */
+
+.cloud .grid{
+    grid-template-columns: 4fr 3fr;
 }
